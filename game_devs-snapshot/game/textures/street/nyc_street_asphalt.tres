@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://nyc_street_asphalt_mat"]
+
+[ext_resource type="Texture2D" path="res://textures/street/nyc_street_diffuse.png" id="1_diffuse"]
+[ext_resource type="Texture2D" path="res://textures/street/nyc_street_normal.png" id="2_normal"]
+[ext_resource type="Texture2D" path="res://textures/street/nyc_street_roughness.png" id="3_roughness"]
+
+[resource]
+resource_name = "NYC_Street_Asphalt_Textured"
+albedo_color = Color(0.9, 0.9, 0.9, 1)
+albedo_texture = ExtResource("1_diffuse")
+roughness = 1.0
+roughness_texture = ExtResource("3_roughness")
+roughness_texture_channel = 0
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource("2_normal")
+uv1_scale = Vector3(8, 8, 1)
+texture_filter = 2

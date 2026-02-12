@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://debrqgua3733w"]
+
+[ext_resource type="PackedScene" uid="uid://b7qurluyftf5l" path="res://assets/models/characters/savage.glb" id="1_savage_model"]
+[ext_resource type="PackedScene" path="res://scenes/weapons/m1911.tscn" id="2_weapon"]
+[ext_resource type="PackedScene" uid="uid://c8fpsweaponviewport" path="res://scenes/player/fps_weapon_viewport.tscn" id="3_fps_viewport"]
+[ext_resource type="PackedScene" uid="uid://cpistolfps" path="res://assets/weapons/pistol/pistol_fps.tscn" id="4_pistol_fps"]
+[ext_resource type="Script" path="res://scripts/player/player_camera_handler.gd" id="5_camera_handler"]
+[ext_resource type="Script" path="res://scripts/player/player_weapon_bridge.gd" id="6_weapon_bridge"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1"]
+radius = 0.35
+height = 1.75
+
+[node name="Player" type="PlayerController" groups=["player"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875, 0)
+shape = SubResource("CapsuleShape3D_1")
+
+[node name="SavageModel" parent="." instance=ExtResource("1_savage_model")]
+transform = Transform3D(-0.99691737, 0, 0.07845898, 0, 1, 0, -0.07845898, 0, -0.99691737, 0.0025986433, 0, 0)
+
+[node name="ThirdPersonCamera" type="ThirdPersonCamera" parent="."]
+script = ExtResource("5_camera_handler")
+
+[node name="Camera3D" type="Camera3D" parent="ThirdPersonCamera" groups=["main_camera"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.5, 3.5)
+cull_mask = 1047551
+current = true
+
+[node name="FPSWeaponViewport" parent="." instance=ExtResource("3_fps_viewport")]
+visible = false
+
+[node name="PistolFPS" parent="FPSWeaponViewport/SubViewport/WeaponCamera/WeaponRig" instance=ExtResource("4_pistol_fps")]
+
+[node name="SurvivalStats" type="SurvivalStats" parent="."]
+
+[node name="Inventory" type="Inventory" parent="."]
+
+[node name="WeaponBridge" type="Node" parent="."]
+script = ExtResource("6_weapon_bridge")
+
+[node name="Weapon" parent="." instance=ExtResource("2_weapon")]
+
+[node name="MuzzlePoint" type="Marker3D" parent="Weapon"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)

@@ -1,0 +1,21 @@
+{
+  "name": "Windows_u2Truck3_1.001",
+  "category": "paint",
+  "properties": {
+    "base_color": [
+      0.800000011920929,
+      0.800000011920929,
+      0.800000011920929,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.9691779017448425,
+    "subsurface_weight": 0.0,
+    "coat_weight": 0.0,
+    "normal_strength": 1.0
+  },
+  "embedded_textures": [
+    "u2van2.001"
+  ],
+  "principled_bsdf": true
+}

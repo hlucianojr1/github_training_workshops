@@ -1,0 +1,15 @@
+{
+  "library_name": "Urban Survivor Material Library",
+  "version": "1.0",
+  "categories": {
+    "roads": 2,
+    "concrete": 257,
+    "brick": 2,
+    "glass": 2,
+    "metals": 12,
+    "stone": 2,
+    "wood": 2,
+    "paint": 2439
+  },
+  "total_materials": 2718
+}

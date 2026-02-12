@@ -1,0 +1,14 @@
+[configuration]
+
+entry_symbol = "urban_survivor_library_init"
+compatibility_minimum = "4.3"
+reloadable = true
+
+[libraries]
+
+windows.debug.x86_64 = "res://bin/liburban_survivor.windows.debug.x86_64.dll"
+windows.release.x86_64 = "res://bin/liburban_survivor.windows.release.x86_64.dll"
+linux.debug.x86_64 = "res://bin/liburban_survivor.linux.debug.x86_64.so"
+linux.release.x86_64 = "res://bin/liburban_survivor.linux.release.x86_64.so"
+macos.debug.arm64 = "res://bin/liburban_survivor.macos.debug.arm64.dylib"
+macos.release.arm64 = "res://bin/liburban_survivor.macos.release.arm64.dylib"

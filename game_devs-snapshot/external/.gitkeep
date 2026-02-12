@@ -1,0 +1,3 @@
+# External dependencies directory
+# godot-cpp should be added as a git submodule:
+# git submodule add https://github.com/godotengine/godot-cpp.git external/godot-cpp

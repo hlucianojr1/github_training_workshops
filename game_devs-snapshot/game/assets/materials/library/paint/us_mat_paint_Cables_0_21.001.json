@@ -1,0 +1,19 @@
+{
+  "name": "Cables_0_21.001",
+  "category": "paint",
+  "properties": {
+    "base_color": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 1.0,
+    "subsurface_weight": 0.0,
+    "coat_weight": 0.0,
+    "normal_strength": 1.0
+  },
+  "embedded_textures": [],
+  "principled_bsdf": true
+}

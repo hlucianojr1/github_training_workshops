@@ -1,0 +1,106 @@
+{
+    "version": 8,
+    "$schema": "https://cmake.org/cmake/help/latest/_downloads/3e2d73bff478d88a7de0de736ba5e361/schema.json",
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 28,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "windows-base",
+            "hidden": true,
+            "description": "Base Windows settings for Urban Survivor GDExtension",
+            "architecture": {
+                "value": "x64",
+                "strategy": "set"
+            },
+            "toolset": {
+                "value": "host=x64",
+                "strategy": "set"
+            },
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_CXX_STANDARD": "17",
+                "CMAKE_CXX_STANDARD_REQUIRED": "ON",
+                "CMAKE_POSITION_INDEPENDENT_CODE": "ON"
+            }
+        },
+        {
+            "name": "vs2026-x64",
+            "displayName": "Visual Studio 2026 x64",
+            "description": "Configure with Visual Studio 18 2026 generator (x64)",
+            "inherits": "windows-base",
+            "generator": "Visual Studio 18 2026"
+        },
+        {
+            "name": "vs2022-x64",
+            "displayName": "Visual Studio 2022 x64 (Fallback)",
+            "description": "Configure with Visual Studio 17 2022 generator (x64)",
+            "inherits": "windows-base",
+            "generator": "Visual Studio 17 2022"
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "vs2026-debug",
+            "displayName": "VS 2026 — Debug",
+            "description": "Build Debug configuration (outputs liburban_survivor.windows.debug.x86_64.dll)",
+            "configurePreset": "vs2026-x64",
+            "configuration": "Debug"
+        },
+        {
+            "name": "vs2026-release",
+            "displayName": "VS 2026 — Release",
+            "description": "Build Release configuration (outputs liburban_survivor.windows.release.x86_64.dll)",
+            "configurePreset": "vs2026-x64",
+            "configuration": "Release"
+        },
+        {
+            "name": "vs2022-debug",
+            "displayName": "VS 2022 — Debug",
+            "description": "Build Debug configuration with VS 2022 fallback",
+            "configurePreset": "vs2022-x64",
+            "configuration": "Debug"
+        },
+        {
+            "name": "vs2022-release",
+            "displayName": "VS 2022 — Release",
+            "description": "Build Release configuration with VS 2022 fallback",
+            "configurePreset": "vs2022-x64",
+            "configuration": "Release"
+        }
+    ],
+    "workflowPresets": [
+        {
+            "name": "vs2026-debug",
+            "displayName": "Configure + Build Debug (VS 2026)",
+            "description": "Full workflow: configure then build Debug",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "vs2026-x64"
+                },
+                {
+                    "type": "build",
+                    "name": "vs2026-debug"
+                }
+            ]
+        },
+        {
+            "name": "vs2026-release",
+            "displayName": "Configure + Build Release (VS 2026)",
+            "description": "Full workflow: configure then build Release",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "vs2026-x64"
+                },
+                {
+                    "type": "build",
+                    "name": "vs2026-release"
+                }
+            ]
+        }
+    ]
+}

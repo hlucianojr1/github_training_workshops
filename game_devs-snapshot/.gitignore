@@ -1,0 +1,178 @@
+# Godot 4.x
+.godot/
+*.import
+*.translation
+export_presets.cfg
+.mono/
+data_*/
+
+# C++ Build artifacts
+build/
+cmake-build-*/
+out/
+bin/
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.exe
+*.out
+*.app
+*.pdb
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+CMakeUserPresets.json
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Visual Studio (ignore cache/user data, but track shared config)
+.vs/*
+!.vs/launch.vs.json
+!.vs/tasks.vs.json
+*.suo
+*.user
+*.userosscache
+*.sln
+*.sln.docstates
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+x64/
+x86/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+*.ilk
+*.iobj
+*.ipdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*.log
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+
+# Other IDEs
+.idea/
+*.iml
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# Keep GDExtension binaries in game/bin tracked
+!game/bin/.gitkeep
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+desktop.ini
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# Dependencies (use submodules)
+external/godot-cpp/*
+!external/godot-cpp/.gitkeep
+
+# Large model files (keep locally only)
+# Large GLB/GLTF archives
+import_glb/archive/*.glb
+import_glb/archive/*.gltf
+import_glb/*.glb
+import_glb/*.gltf
+
+# Files exceeding GitHub's 100MB limit
+import_glb/Longbow Locomotion Pack.zip
+import_glb/highly-detailed-buildings-games-and-renders.zip
+
+# Large GLB files (>50MB) - GitHub warnings
+import_glb/abandoned-factory-remodelled-gameready/source/Untitled.glb
+game/assets/models/buildings/building_abandoned_factory_lod1.glb
+game/assets/models/buildings/building_abandoned_factory_lod0.glb
+game/assets/models/buildings/building_abandoned_factory_lod2.glb
+game/assets/models/buildings/building_city_full_pack_lod0.glb
+game/models/props/military_tent_02.glb
+import_glb/full-gameready-city-buildings.zip
+import_glb/low-poly-city-buildings.zip
+
+# Large level binaries (Godot compiled scenes)
+game/assets/levels/*.bin
+
+# Large character models
+game/assets/models/characters/player/*.gltf
+game/assets/models/characters/player/*.glb
+
+# Large Blender source files (>10MB)
+blender/brick_building.blend
+blender/brick_building.blend1
+blender/full_city.blend
+blender/suspension_bridge.blend
+blender/buildings.blend
+blender/pileofdebrie.blend
+blender/Untitled.blend
+blender/taxi_withdamage.blend
+blender/policecar.blend
+tools/external/
+.vs
+.cmake

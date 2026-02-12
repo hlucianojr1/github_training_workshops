@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://weapon_m1911_001"]
+
+[node name="M1911" type="Weapon"]
+weapon_id = "m1911"
+weapon_name = "M1911 Pistol"
+magazine_capacity = 8
+reserve_capacity = 64
+damage = 48.0
+fire_rate = 0.2
+reload_time = 2.5
+reload_mag_out_time = 0.3
+reload_mag_in_time = 0.7
+projectile_speed = 400.0
+effective_range = 50.0
+max_range = 150.0
+base_spread = 0.5
+max_spread = 3.0
+spread_increase_per_shot = 0.8
+spread_recovery_rate = 4.0
+recoil_vertical = 2.0
+recoil_horizontal = 0.5
+can_auto_fire = false
+fire_mode = 0

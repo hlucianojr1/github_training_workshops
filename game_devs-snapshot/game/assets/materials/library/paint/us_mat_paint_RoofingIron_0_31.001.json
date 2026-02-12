@@ -1,0 +1,22 @@
+{
+  "name": "RoofingIron_0_31.001",
+  "category": "paint",
+  "properties": {
+    "base_color": [
+      0.800000011920929,
+      0.800000011920929,
+      0.800000011920929,
+      1.0
+    ],
+    "metallic": 0.2581818699836731,
+    "roughness": 1.0,
+    "subsurface_weight": 0.0,
+    "coat_weight": 0.0,
+    "normal_strength": 1.0
+  },
+  "embedded_textures": [
+    "Image_29.001",
+    "Untitled.022"
+  ],
+  "principled_bsdf": true
+}

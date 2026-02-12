@@ -1,0 +1,21 @@
+{
+  "name": "Material.026",
+  "category": "paint",
+  "properties": {
+    "base_color": [
+      0.800000011920929,
+      0.800000011920929,
+      0.800000011920929,
+      1.0
+    ],
+    "metallic": 0.4285714328289032,
+    "roughness": 0.0,
+    "subsurface_weight": 0.0,
+    "coat_weight": 0.0,
+    "normal_strength": 1.0
+  },
+  "embedded_textures": [
+    "socialsight-ai-164346e0-89f1-4a86-9729-7e21243dda33.001"
+  ],
+  "principled_bsdf": true
+}

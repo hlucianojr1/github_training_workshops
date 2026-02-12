@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=4 format=3 uid="uid://cak47resource"]
+
+[ext_resource type="Script" path="res://scripts/weapon/weapon_resource.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://assets/weapons/ak47/ak47_fps.tscn" id="2_fps_scene"]
+[ext_resource type="AudioStream" path="res://assets/weapons/ak47/ak47_shot.wav" id="3_shoot_sound"]
+
+[resource]
+script = ExtResource("1_script")
+weapon_id = "ak47"
+display_name = "AK-47"
+description = "A reliable automatic rifle. High damage with moderate recoil."
+fps_scene = ExtResource("2_fps_scene")
+fps_position = Vector3(0.15, -0.18, -0.35)
+fps_rotation = Vector3(0, 0, 0)
+fps_scale = Vector3(1, 1, 1)
+aim_position = Vector3(0, -0.12, -0.3)
+aim_rotation = Vector3(0, 0, 0)
+aim_speed = 8.0
+aim_fov = 50.0
+sway_enabled = true
+sway_amount = 0.01
+sway_max = 0.05
+sway_speed = 5.0
+idle_sway_enabled = true
+idle_sway_amount = 0.0008
+idle_sway_speed = 0.9
+bob_enabled = true
+bob_frequency = 2.2
+bob_amplitude = 0.02
+recoil_vertical = 0.04
+recoil_horizontal = 0.015
+recoil_snap_amount = 0.12
+recoil_recovery_speed = 8.0
+damage = 30.0
+fire_rate = 0.1
+range_distance = 80.0
+spread_base = 1.2
+spread_max = 6.0
+spread_increase = 0.8
+spread_recovery = 2.5
+magazine_size = 30
+reserve_ammo = 120
+reload_time = 2.5
+ammo_type = "rifle"
+fire_mode = 1
+burst_count = 3
+sound_fire = ExtResource("3_shoot_sound")
+muzzle_flash_duration = 0.03
+muzzle_light_energy = 3.0
+muzzle_light_color = Color(1, 0.8, 0.4, 1)

@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "blender": {
+      "command": "python",
+      "args": [ "-m", "blender_mcp.server" ],
+      "env": {}
+    },
+    "context7": {
+      "command": "npx",
+      "args": [ "-y", "@context7/mcp-server" ]
+    }
+  }
+}

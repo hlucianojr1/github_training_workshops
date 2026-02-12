@@ -1,0 +1,24 @@
+# Godot 4+ specific ignores
+.godot/
+*.translation
+
+# Import cache
+.import/
+
+# Binaries (managed by CMake)
+bin/
+
+# Mono-specific ignores
+mono_crash.*.json
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# OS/Editor specific
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~

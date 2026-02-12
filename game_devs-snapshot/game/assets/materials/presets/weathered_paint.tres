@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://d4j7m2n5k8p1r"]
+
+[ext_resource type="Shader" path="res://assets/shaders/building.gdshader" id="1_shader"]
+
+[resource]
+resource_name = "Weathered Paint"
+shader = ExtResource("1_shader")
+shader_parameter/base_color = Color(0.45, 0.52, 0.48, 1)
+shader_parameter/paint_color = Color(0.62, 0.58, 0.52, 1)
+shader_parameter/roughness = 0.85
+shader_parameter/metallic = 0.0
+shader_parameter/paint_wear = 0.55
+shader_parameter/grime_color = Color(0.18, 0.16, 0.14, 1)
+shader_parameter/grime_amount = 0.35
+shader_parameter/crack_amount = 0.3
+shader_parameter/uv_scale = 1.0

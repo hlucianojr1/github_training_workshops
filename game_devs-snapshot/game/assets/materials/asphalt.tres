@@ -1,0 +1,23 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cpk3f1gmxjh1y"]
+
+[ext_resource type="Shader" uid="uid://dg2vtviiirsb3" path="res://assets/shaders/street.gdshader" id="1_street"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_street")
+shader_parameter/asphalt_color = Color(0.22, 0.21, 0.2, 1)
+shader_parameter/asphalt_warm = Color(0.25, 0.22, 0.19, 1)
+shader_parameter/asphalt_cool = Color(0.19, 0.2, 0.22, 1)
+shader_parameter/roughness = 0.85
+shader_parameter/uv_scale = 10.0
+shader_parameter/lane_color = Color(0.82, 0.8, 0.75, 1)
+shader_parameter/lane_width = 0.04
+shader_parameter/dash_length = 2.0
+shader_parameter/dash_gap = 1.5
+shader_parameter/lane_fade = 0.55
+shader_parameter/crack_density = 0.08
+shader_parameter/crack_darkness = 0.25
+shader_parameter/aggregate_scale = 50.0
+shader_parameter/aggregate_intensity = 0.12
+shader_parameter/normal_strength = 0.08
+shader_parameter/wear_intensity = 0.15

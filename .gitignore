@@ -1,0 +1,7 @@
+# Large snapshot files
+*.zip
+
+# Common development files
+.DS_Store
+.vscode/
+*.log

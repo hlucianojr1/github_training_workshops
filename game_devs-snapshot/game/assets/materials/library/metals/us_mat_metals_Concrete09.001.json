@@ -1,0 +1,19 @@
+{
+  "name": "Concrete09.001",
+  "category": "metals",
+  "properties": {
+    "base_color": [
+      0.07100404053926468,
+      0.08674336224794388,
+      0.0961804986000061,
+      1.0
+    ],
+    "metallic": 1.0,
+    "roughness": 0.6000000238418579,
+    "subsurface_weight": 0.0,
+    "coat_weight": 0.0,
+    "normal_strength": 1.0
+  },
+  "embedded_textures": [],
+  "principled_bsdf": true
+}
