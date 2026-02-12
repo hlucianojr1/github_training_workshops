@@ -1,0 +1,161 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-02-03",
+  "description": "Canonical seed data for High Scores Demo - Single source of truth for all backends",
+  "games": [
+    {
+      "name": "Operation Nightfall",
+      "description": "Tactical stealth operations in hostile territory"
+    },
+    {
+      "name": "Shadow Protocol",
+      "description": "Covert intelligence missions"
+    },
+    {
+      "name": "Arctic Thunder",
+      "description": "Extreme cold weather combat operations"
+    }
+  ],
+  "scores": [
+    {
+      "playerName": "GhostReaper",
+      "gameName": "Operation Nightfall",
+      "score": 145820,
+      "kills": 2847,
+      "wins": 156
+    },
+    {
+      "playerName": "ShadowSniper",
+      "gameName": "Operation Nightfall",
+      "score": 142150,
+      "kills": 2756,
+      "wins": 149
+    },
+    {
+      "playerName": "PhantomElite",
+      "gameName": "Operation Nightfall",
+      "score": 138490,
+      "kills": 2698,
+      "wins": 145
+    },
+    {
+      "playerName": "ViperStrike",
+      "gameName": "Operation Nightfall",
+      "score": 135280,
+      "kills": 2634,
+      "wins": 141
+    },
+    {
+      "playerName": "StealthNinja",
+      "gameName": "Operation Nightfall",
+      "score": 132760,
+      "kills": 2589,
+      "wins": 138
+    },
+    {
+      "playerName": "TacticalWolf",
+      "gameName": "Operation Nightfall",
+      "score": 129450,
+      "kills": 2523,
+      "wins": 134
+    },
+    {
+      "playerName": "NightHawk47",
+      "gameName": "Operation Nightfall",
+      "score": 126890,
+      "kills": 2478,
+      "wins": 131
+    },
+    {
+      "playerName": "DeltaForce",
+      "gameName": "Operation Nightfall",
+      "score": 124320,
+      "kills": 2431,
+      "wins": 128
+    },
+    {
+      "playerName": "ApexPredator",
+      "gameName": "Operation Nightfall",
+      "score": 121750,
+      "kills": 2384,
+      "wins": 125
+    },
+    {
+      "playerName": "WarMachine",
+      "gameName": "Operation Nightfall",
+      "score": 119180,
+      "kills": 2337,
+      "wins": 122
+    },
+    {
+      "playerName": "SilentStorm",
+      "gameName": "Shadow Protocol",
+      "score": 98540,
+      "kills": 1876,
+      "wins": 89
+    },
+    {
+      "playerName": "DarkSpectre",
+      "gameName": "Shadow Protocol",
+      "score": 95230,
+      "kills": 1798,
+      "wins": 85
+    },
+    {
+      "playerName": "CrypticBlade",
+      "gameName": "Shadow Protocol",
+      "score": 92180,
+      "kills": 1723,
+      "wins": 82
+    },
+    {
+      "playerName": "PhantomElite",
+      "gameName": "Shadow Protocol",
+      "score": 89450,
+      "kills": 1654,
+      "wins": 79
+    },
+    {
+      "playerName": "GhostReaper",
+      "gameName": "Shadow Protocol",
+      "score": 86920,
+      "kills": 1589,
+      "wins": 76
+    },
+    {
+      "playerName": "FrostBite",
+      "gameName": "Arctic Thunder",
+      "score": 78340,
+      "kills": 1456,
+      "wins": 67
+    },
+    {
+      "playerName": "IceWarden",
+      "gameName": "Arctic Thunder",
+      "score": 75120,
+      "kills": 1398,
+      "wins": 64
+    },
+    {
+      "playerName": "PolarVortex",
+      "gameName": "Arctic Thunder",
+      "score": 72890,
+      "kills": 1342,
+      "wins": 61
+    },
+    {
+      "playerName": "TundraHunter",
+      "gameName": "Arctic Thunder",
+      "score": 69450,
+      "kills": 1287,
+      "wins": 58
+    },
+    {
+      "playerName": "BlizzardKing",
+      "gameName": "Arctic Thunder",
+      "score": 66780,
+      "kills": 1234,
+      "wins": 55
+    }
+  ]
+}

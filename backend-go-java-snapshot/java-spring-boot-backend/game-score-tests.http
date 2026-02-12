@@ -1,0 +1,226 @@
+### Game High Score API - Comprehensive Test Suite
+### 
+### This file contains tests for the high score tracking system
+### Prerequisites: Application must be running on localhost:8080
+
+@baseUrl = http://localhost:8080
+
+#################################################
+### BASIC HEALTH CHECKS
+#################################################
+
+### Test 1: Application Health Check
+# @name healthCheck
+GET {{baseUrl}}/health
+Accept: application/json
+
+### Test 2: Root Endpoint
+# @name rootEndpoint
+GET {{baseUrl}}/
+
+#################################################
+### SCORE SUBMISSION TESTS
+#################################################
+
+### Test 3: Submit a high score with current timestamp
+# @name submitScore1
+POST {{baseUrl}}/api/scores/submit
+Content-Type: application/json
+
+{
+  "playerName": "Alice",
+  "gameName": "Pac-Man",
+  "score": 125000
+}
+
+### Test 4: Submit another score for same game, different player
+# @name submitScore2
+POST {{baseUrl}}/api/scores/submit
+Content-Type: application/json
+
+{
+  "playerName": "Bob",
+  "gameName": "Pac-Man",
+  "score": 98000
+}
+
+### Test 5: Submit score with specific timestamp
+# @name submitScoreWithTime
+POST {{baseUrl}}/api/scores/submit
+Content-Type: application/json
+
+{
+  "playerName": "Charlie",
+  "gameName": "Pac-Man",
+  "score": 156000,
+  "achievedAt": "2024-01-15T14:30:00"
+}
+
+### Test 6: Submit score for different game
+# @name submitScoreTetris
+POST {{baseUrl}}/api/scores/submit
+Content-Type: application/json
+
+{
+  "playerName": "Alice",
+  "gameName": "Tetris",
+  "score": 750000
+}
+
+### Test 7: Submit multiple scores for same player/game
+# @name submitScore3
+POST {{baseUrl}}/api/scores/submit
+Content-Type: application/json
+
+{
+  "playerName": "Alice",
+  "gameName": "Pac-Man",
+  "score": 145000
+}
+
+#################################################
+### RETRIEVE SCORES TESTS
+#################################################
+
+### Test 8: Get top scores for Pac-Man (default 10)
+# @name topPacManScores
+GET {{baseUrl}}/api/scores/game/Pac-Man/top
+Accept: application/json
+
+### Test 9: Get top 3 scores for Pac-Man
+# @name top3PacManScores
+GET {{baseUrl}}/api/scores/game/Pac-Man/top?limit=3
+Accept: application/json
+
+### Test 10: Get all scores for Alice (first page)
+# @name aliceScores
+GET {{baseUrl}}/api/scores/player/Alice
+Accept: application/json
+
+### Test 11: Get all scores for Pac-Man game (with pagination)
+# @name pacManAllScores
+GET {{baseUrl}}/api/scores/game/Pac-Man?page=0&size=5
+Accept: application/json
+
+### Test 12: Get Alice's scores in Pac-Man
+# @name alicePacManScores
+GET {{baseUrl}}/api/scores/player/Alice/game/Pac-Man
+Accept: application/json
+
+### Test 13: Get Alice's high score in Pac-Man
+# @name aliceHighScore
+GET {{baseUrl}}/api/scores/player/Alice/game/Pac-Man/high-score
+Accept: application/json
+
+#################################################
+### GAME AND PLAYER LISTINGS
+#################################################
+
+### Test 14: Get all available games
+# @name allGames
+GET {{baseUrl}}/api/scores/games
+Accept: application/json
+
+### Test 15: Get all players
+# @name allPlayers
+GET {{baseUrl}}/api/scores/players
+Accept: application/json
+
+#################################################
+### STATISTICS TESTS
+#################################################
+
+### Test 16: Get Pac-Man game statistics
+# @name pacManStats
+GET {{baseUrl}}/api/scores/game/Pac-Man/stats
+Accept: application/json
+
+### Test 17: Get Alice player statistics
+# @name aliceStats
+GET {{baseUrl}}/api/scores/player/Alice/stats
+Accept: application/json
+
+#################################################
+### ERROR HANDLING TESTS
+#################################################
+
+### Test 18: Submit score with missing required field
+# @name submitInvalidScore
+POST {{baseUrl}}/api/scores/submit
+Content-Type: application/json
+
+{
+  "playerName": "TestPlayer",
+  "score": 100000
+}
+
+### Test 19: Get scores for non-existent player
+# @name nonExistentPlayer
+GET {{baseUrl}}/api/scores/player/NonExistentPlayer
+Accept: application/json
+
+### Test 20: Get scores for non-existent game
+# @name nonExistentGame
+GET {{baseUrl}}/api/scores/game/NonExistentGame/top
+Accept: application/json
+
+#################################################
+### PAGINATION TESTS
+#################################################
+
+### Test 21: Get second page of Pac-Man scores
+# @name pacManPage2
+GET {{baseUrl}}/api/scores/game/Pac-Man?page=1&size=2
+Accept: application/json
+
+### Test 22: Get large page size
+# @name largePage
+GET {{baseUrl}}/api/scores/game/Pac-Man?page=0&size=100
+Accept: application/json
+
+#################################################
+### BULK DATA TESTS
+#################################################
+
+### Test 23: Submit score for Space Invaders
+# @name submitSpaceInvaders1
+POST {{baseUrl}}/api/scores/submit
+Content-Type: application/json
+
+{
+  "playerName": "Dave",
+  "gameName": "Space Invaders",
+  "score": 34500
+}
+
+### Test 24: Submit another Space Invaders score
+# @name submitSpaceInvaders2
+POST {{baseUrl}}/api/scores/submit
+Content-Type: application/json
+
+{
+  "playerName": "Eve",
+  "gameName": "Space Invaders",
+  "score": 42100
+}
+
+### Test 25: Submit score for Asteroids
+# @name submitAsteroids
+POST {{baseUrl}}/api/scores/submit
+Content-Type: application/json
+
+{
+  "playerName": "Frank",
+  "gameName": "Asteroids",
+  "score": 67800
+}
+
+### Test 26: Get updated game list (should now include 4 games)
+# @name updatedGameList
+GET {{baseUrl}}/api/scores/games
+Accept: application/json
+
+### Test 27: Get updated player list
+# @name updatedPlayerList
+GET {{baseUrl}}/api/scores/players
+Accept: application/json

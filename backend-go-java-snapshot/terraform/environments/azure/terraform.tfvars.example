@@ -1,0 +1,46 @@
+# Azure Environment Configuration
+# Copy this file to terraform.tfvars and fill in your values
+
+# Azure Configuration
+azure_location      = "eastus"
+environment         = "prod"
+resource_group_name = "highscores-rg"
+aks_cluster_name    = "your-aks-cluster-name"
+
+# Database Configuration
+database_username      = "highscores_admin"
+# database_password    = "CHANGEME" # Set via TF_VAR_database_password environment variable
+postgres_server_name   = "highscores-postgres-unique-name"  # Must be globally unique
+postgres_sku_name      = "B_Standard_B1ms"  # Burstable tier for dev/test
+postgres_storage_mb    = 32768  # 32 GB
+backup_retention_days  = 7
+geo_redundant_backup   = false
+availability_zone      = "1"
+
+# Allow AKS to access PostgreSQL
+# Get AKS outbound IPs with: az aks show -n <cluster> -g <rg> --query "networkProfile.outboundIPAddresses"
+allowed_ip_ranges = [
+  {
+    start_ip = "0.0.0.0"     # Replace with your AKS outbound IP range
+    end_ip   = "255.255.255.255"
+  }
+]
+
+# Container Images (from ACR)
+backend_image  = "myregistry.azurecr.io/highscores-backend:latest"
+frontend_image = "myregistry.azurecr.io/highscores-frontend:latest"
+
+# Scaling Configuration
+backend_replicas   = 2
+frontend_replicas  = 2
+enable_autoscaling = true
+
+# Ingress Configuration
+domain_name    = "highscores.example.com"
+ingress_class  = "nginx"  # Or "azure/application-gateway" if using AGIC
+enable_tls     = true
+
+# If using Application Gateway Ingress Controller (AGIC)
+# ingress_class              = "azure/application-gateway"
+# appgw_ssl_certificate_name = "highscores-cert"
+# use_private_ip             = false

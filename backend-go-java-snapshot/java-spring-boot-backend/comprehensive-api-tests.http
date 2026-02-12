@@ -1,0 +1,121 @@
+### AI Demo Application - Comprehensive API Test Suite
+### 
+### This file contains comprehensive tests for all endpoints
+### Click "Send Request" above each request to execute it
+### 
+### Prerequisites: 
+### - Application must be running on localhost:8080
+### - Start with: ./gradlew bootRun
+
+@baseUrl = http://localhost:8080
+
+#################################################
+### SMOKE TESTS - Basic functionality
+#################################################
+
+### Test 1: Application Health Check
+# @name healthCheck
+GET {{baseUrl}}/health
+Accept: application/json
+
+### Test 2: Root Endpoint
+# @name rootEndpoint
+GET {{baseUrl}}/
+
+#################################################
+### HELLO ENDPOINTS - Query Parameters
+#################################################
+
+### Test 3: Hello with default parameter (World)
+# @name helloDefault
+GET {{baseUrl}}/hello
+
+### Test 4: Hello with custom name
+# @name helloCustom
+GET {{baseUrl}}/hello?name=Developer
+
+### Test 5: Hello with special characters in name
+# @name helloSpecialChars
+GET {{baseUrl}}/hello?name=John%20Doe
+
+### Test 6: Hello with empty name parameter
+# @name helloEmpty
+GET {{baseUrl}}/hello?name=
+
+#################################################
+### HELLO ENDPOINTS - Path Variables
+#################################################
+
+### Test 7: Hello path variable - simple name
+# @name helloPathSimple
+GET {{baseUrl}}/hello/Alice
+
+### Test 8: Hello path variable - compound name
+# @name helloPathCompound
+GET {{baseUrl}}/hello/Spring%20Boot
+
+### Test 9: Hello path variable - numbers
+# @name helloPathNumbers
+GET {{baseUrl}}/hello/User123
+
+#################################################
+### ERROR HANDLING TESTS
+#################################################
+
+### Test 10: Non-existent endpoint (should return 404)
+# @name notFound
+GET {{baseUrl}}/nonexistent
+
+### Test 11: Invalid path parameter (should handle gracefully)
+# @name invalidPath
+GET {{baseUrl}}/hello/
+
+#################################################
+### PERFORMANCE TESTS - Multiple requests
+#################################################
+
+### Test 12: Rapid fire health checks
+# @name rapidHealth1
+GET {{baseUrl}}/health
+
+### Test 13: Rapid fire health checks
+# @name rapidHealth2
+GET {{baseUrl}}/health
+
+### Test 14: Rapid fire health checks
+# @name rapidHealth3
+GET {{baseUrl}}/health
+
+#################################################
+### CONTENT TYPE TESTS
+#################################################
+
+### Test 15: Request with different Accept header
+# @name acceptText
+GET {{baseUrl}}/
+Accept: text/plain
+
+### Test 16: Request with wildcard Accept header
+# @name acceptWildcard
+GET {{baseUrl}}/health
+Accept: */*
+
+#################################################
+### INTEGRATION TESTS - Full workflow
+#################################################
+
+### Test 17: Full API workflow test
+# Step 1: Check health
+GET {{baseUrl}}/health
+
+###
+# Step 2: Get welcome message
+GET {{baseUrl}}/
+
+###
+# Step 3: Test personalized greeting
+GET {{baseUrl}}/hello?name=IntegrationTest
+
+###
+# Step 4: Test path variable greeting
+GET {{baseUrl}}/hello/APITest

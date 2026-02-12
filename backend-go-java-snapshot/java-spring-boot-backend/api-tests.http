@@ -1,0 +1,72 @@
+### AI Demo Application - REST API Tests
+### Base URL for all requests
+@baseUrl = http://localhost:8080
+
+### 1. Root Endpoint - Welcome message
+GET {{baseUrl}}/
+Accept: application/json
+
+###
+
+### 2. Health Check - Application status
+GET {{baseUrl}}/health
+Accept: application/json
+
+###
+
+### 3. Hello Endpoint - Default greeting (World)
+GET {{baseUrl}}/hello
+Accept: application/json
+
+###
+
+### 4. Hello Endpoint - Custom greeting with query parameter
+GET {{baseUrl}}/hello?name=Developer
+Accept: application/json
+
+###
+
+### 5. Hello Endpoint - Another custom greeting
+GET {{baseUrl}}/hello?name=SpringBoot
+Accept: application/json
+
+###
+
+### 6. Hello Path Variable - Custom greeting with path variable
+GET {{baseUrl}}/hello/John
+Accept: application/json
+
+###
+
+### 7. Hello Path Variable - Another path variable example
+GET {{baseUrl}}/hello/Alice
+Accept: application/json
+
+###
+
+### 8. Hello Path Variable - Testing with special characters
+GET {{baseUrl}}/hello/Spring%20Boot
+Accept: application/json
+
+###
+
+### 9. Test Error Handling - Non-existent endpoint (should return 404)
+GET {{baseUrl}}/nonexistent
+Accept: application/json
+
+###
+
+### 10. Multiple requests to verify consistency
+### Testing the same endpoint multiple times to ensure consistent responses
+
+GET {{baseUrl}}/health
+
+###
+
+GET {{baseUrl}}/
+
+###
+
+GET {{baseUrl}}/hello?name=Test
+
+###
