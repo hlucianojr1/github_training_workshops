@@ -5,3 +5,131 @@
 .DS_Store
 .vscode/
 *.log
+
+# =========================
+# C++ Build Artifacts
+# =========================
+*.o
+*.obj
+*.lo
+*.slo
+*.d
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.out
+*.app
+*.pdb
+*.ilk
+*.exp
+
+# Precompiled headers
+*.gch
+*.pch
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CMakeScripts/
+CTestTestfile.cmake
+Testing/
+compile_commands.json
+_deps/
+
+# Build directories
+build/
+out/
+bin/
+lib/
+Debug/
+Release/
+x64/
+x86/
+MinSizeRel/
+RelWithDebInfo/
+
+# Visual Studio
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.suo
+*.opensdf
+*.sdf
+*.cachefile
+*.VC.db
+*.VC.opendb
+.vs/
+ipch/
+
+# SCons (Godot build system)
+.sconsign.dblite
+*.pyc
+
+# =========================
+# Godot Engine
+# =========================
+
+# Godot 4.x exported files
+.godot/
+
+# Godot 3.x imported files
+.import/
+
+# Exported projects
+*.pck
+*.zip
+
+# Mono/.NET (if using C# alongside C++)
+.mono/
+data_*/
+mono_crash.*.json
+
+# Godot editor settings (user-specific)
+*.translation
+export_presets.cfg
+
+# GDExtension build artifacts
+gdextension_build/
+*.gdextension.so
+*.gdextension.dll
+*.gdextension.dylib
+
+# godot-cpp / GDExtension binding builds
+godot-cpp/bin/
+godot-cpp/gen/
+
+# =========================
+# Dependencies & Package Managers
+# =========================
+vcpkg_installed/
+conan/
+conanbuildinfo.*
+conaninfo.txt
+graph_info.json
+
+# =========================
+# IDE & Editor Files
+# =========================
+*.swp
+*.swo
+*~
+.idea/
+*.iml
+*.code-workspace
+
+# =========================
+# OS Generated Files
+# =========================
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+._*
+.Spotlight-V100
+.Trashes
