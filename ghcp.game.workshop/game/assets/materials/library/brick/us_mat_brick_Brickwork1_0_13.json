@@ -1,0 +1,22 @@
+{
+  "name": "Brickwork1_0_13",
+  "category": "brick",
+  "properties": {
+    "base_color": [
+      0.800000011920929,
+      0.800000011920929,
+      0.800000011920929,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.7200000286102295,
+    "subsurface_weight": 0.0,
+    "coat_weight": 0.0,
+    "normal_strength": 1.0
+  },
+  "embedded_textures": [
+    "Image_12",
+    "Untitled.007"
+  ],
+  "principled_bsdf": true
+}

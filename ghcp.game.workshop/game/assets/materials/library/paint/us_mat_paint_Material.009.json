@@ -1,0 +1,21 @@
+{
+  "name": "Material.009",
+  "category": "paint",
+  "properties": {
+    "base_color": [
+      0.800000011920929,
+      0.800000011920929,
+      0.800000011920929,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 1.0,
+    "subsurface_weight": 0.0,
+    "coat_weight": 0.0,
+    "normal_strength": 1.0
+  },
+  "embedded_textures": [
+    "Screenshot_2025-08-31_160311-removebg-preview"
+  ],
+  "principled_bsdf": true
+}

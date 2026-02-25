@@ -1,0 +1,24 @@
+{
+  "name": "Construction_Rubble_riiuE_Low.001",
+  "category": "paint",
+  "properties": {
+    "base_color": [
+      0.800000011920929,
+      0.800000011920929,
+      0.800000011920929,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.5,
+    "subsurface_weight": 0.0,
+    "coat_weight": 0.0,
+    "normal_strength": 1.0
+  },
+  "embedded_textures": [
+    "Untitled.026",
+    "Image_1.007",
+    "Image_2.007",
+    "Image_1.007"
+  ],
+  "principled_bsdf": true
+}

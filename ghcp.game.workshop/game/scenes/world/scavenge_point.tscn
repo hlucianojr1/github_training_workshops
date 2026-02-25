@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://cscvpt0001"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1"]
+size = Vector3(2.3897095, 1, 4.715393)
+
+[sub_resource type="StandardMaterial3D" id="ScavengeMaterial"]
+transparency = 1
+albedo_color = Color(0.2, 0.8, 0.2, 0.5)
+emission_enabled = true
+emission = Color(0.1, 0.5, 0.1, 1)
+emission_energy_multiplier = 0.5
+
+[node name="ScavengePoint" type="ScavengePoint"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12832642, 0, -0.18374634)
+shape = SubResource("BoxShape3D_1")
+
+[node name="VisualIndicator" type="CSGBox3D" parent="."]
+size = Vector3(0.5, 0.3, 0.5)
+material = SubResource("ScavengeMaterial")
+
+[node name="InteractPrompt" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+visible = false
+text = "Press E to loot"
+font_size = 48
+outline_size = 8

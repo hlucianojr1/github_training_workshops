@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://cpistolresource"]
+
+[ext_resource type="Script" path="res://scripts/weapon/weapon_resource.gd" id="1_script"]
+[ext_resource type="AudioStream" path="res://assets/weapons/pistol/pistol_shoot.wav" id="3_shoot_sound"]
+
+[resource]
+script = ExtResource("1_script")
+weapon_id = "m1911"
+display_name = "M1911 Pistol"
+description = "A reliable .45 ACP semi-automatic pistol. Standard military sidearm."
+fps_position = Vector3(0.2, -0.15, -0.4)
+fps_rotation = Vector3(0, 0, 0)
+fps_scale = Vector3(1, 1, 1)
+aim_position = Vector3(0, -0.08, -0.35)
+aim_rotation = Vector3(0, 0, 0)
+aim_speed = 10.0
+aim_fov = 55.0
+sway_enabled = true
+sway_amount = 0.015
+sway_max = 0.06
+sway_speed = 6.0
+idle_sway_enabled = true
+idle_sway_amount = 0.001
+idle_sway_speed = 1.2
+bob_enabled = true
+bob_frequency = 2.0
+bob_amplitude = 0.025
+recoil_vertical = 0.025
+recoil_horizontal = 0.008
+recoil_snap_amount = 0.08
+recoil_recovery_speed = 10.0
+damage = 35.0
+fire_rate = 0.15
+range_distance = 50.0
+spread_base = 0.8
+spread_max = 4.0
+spread_increase = 0.6
+spread_recovery = 3.0
+magazine_size = 7
+reserve_ammo = 42
+reload_time = 1.8
+ammo_type = "pistol"
+fire_mode = 0
+burst_count = 3
+sound_fire = ExtResource("3_shoot_sound")
+muzzle_flash_duration = 0.04
+muzzle_light_energy = 2.5
+muzzle_light_color = Color(1, 0.85, 0.5, 1)

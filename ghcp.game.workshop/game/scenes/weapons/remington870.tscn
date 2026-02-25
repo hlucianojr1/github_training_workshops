@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://weapon_remington870_001"]
+
+[node name="Remington870" type="Weapon"]
+weapon_id = "remington870"
+weapon_name = "Remington 870 Shotgun"
+weapon_type = 2
+ammo_type = "ammo_12gauge"
+magazine_capacity = 6
+reserve_capacity = 30
+damage = 15.0
+fire_rate = 0.8
+pellet_count = 8
+range = 25.0
+accuracy = 0.6
+base_spread = 0.08
+max_spread = 0.15
+spread_increase_per_shot = 0.02
+spread_recovery_rate = 2.0
+vertical_recoil = 4.5
+horizontal_recoil = 1.5
+reload_time = 4.0
+reload_mag_out_time = 0.15
+reload_mag_in_time = 0.85
+
+[node name="MuzzlePoint" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08, -0.65)

@@ -1,0 +1,23 @@
+{
+  "name": "Downtown_Facade_FLR_7_0",
+  "category": "paint",
+  "properties": {
+    "base_color": [
+      0.800000011920929,
+      0.800000011920929,
+      0.800000011920929,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 0.5,
+    "subsurface_weight": 0.0,
+    "coat_weight": 0.0,
+    "normal_strength": 1.0
+  },
+  "embedded_textures": [
+    "Image_29.002",
+    "Image_30.002",
+    "Image_31.002"
+  ],
+  "principled_bsdf": true
+}

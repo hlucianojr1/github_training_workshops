@@ -1,0 +1,22 @@
+{
+  "name": "Building4_0_6.001",
+  "category": "paint",
+  "properties": {
+    "base_color": [
+      0.800000011920929,
+      0.800000011920929,
+      0.800000011920929,
+      1.0
+    ],
+    "metallic": 0.0,
+    "roughness": 1.0,
+    "subsurface_weight": 0.0,
+    "coat_weight": 0.0,
+    "normal_strength": 1.0
+  },
+  "embedded_textures": [
+    "Image_5.001",
+    "Untitled.018"
+  ],
+  "principled_bsdf": true
+}

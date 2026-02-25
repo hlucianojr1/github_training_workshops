@@ -1,0 +1,93 @@
+[gd_scene load_steps=10 format=3 uid="uid://bpost_processing_stack"]
+
+[ext_resource type="Script" path="res://scenes/effects/PostProcessController.gd" id="1_controller"]
+[ext_resource type="Shader" path="res://assets/shaders/post_process/film_grain.gdshader" id="2_film_grain"]
+[ext_resource type="Shader" path="res://assets/shaders/post_process/vignette.gdshader" id="3_vignette"]
+[ext_resource type="Shader" path="res://assets/shaders/post_process/color_grading.gdshader" id="4_color_grading"]
+[ext_resource type="Shader" path="res://assets/shaders/post_process/chromatic_aberration.gdshader" id="5_chromatic"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_film_grain"]
+shader = ExtResource("2_film_grain")
+shader_parameter/intensity = 0.15
+shader_parameter/grain_size = 2.0
+shader_parameter/colored_grain = false
+shader_parameter/enable_scratches = false
+shader_parameter/scratch_intensity = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vignette"]
+shader = ExtResource("3_vignette")
+shader_parameter/radius = 0.7
+shader_parameter/softness = 0.4
+shader_parameter/intensity = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_color_grading"]
+shader = ExtResource("4_color_grading")
+shader_parameter/preset = 0
+shader_parameter/intensity = 0.7
+shader_parameter/saturation = 1.0
+shader_parameter/contrast = 1.0
+shader_parameter/brightness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_chromatic"]
+shader = ExtResource("5_chromatic")
+shader_parameter/intensity = 0.003
+shader_parameter/radial = true
+
+[node name="PostProcessing" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_controller")
+effects_enabled = true
+film_grain_enabled = true
+vignette_enabled = true
+color_grading_enabled = true
+chromatic_aberration_enabled = true
+grain_intensity = 0.15
+grain_size = 2.0
+colored_grain = false
+enable_scratches = false
+vignette_intensity = 1.0
+vignette_radius = 0.7
+vignette_softness = 0.4
+color_preset = 0
+color_grading_intensity = 0.7
+brightness = 0.0
+contrast = 1.0
+saturation = 1.0
+aberration_intensity = 0.003
+radial_aberration = true
+
+[node name="FilmGrain" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_film_grain")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Vignette" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_vignette")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorGrading" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_color_grading")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ChromaticAberration" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_chromatic")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

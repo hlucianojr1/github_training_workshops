@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://cpistolfps"]
+
+[ext_resource type="PackedScene" path="res://assets/weapons/pistol/model/pew.glb" id="1_pistol"]
+[ext_resource type="PackedScene" path="res://assets/weapons/arms/fps_arms.tscn" id="2_arms"]
+[ext_resource type="Script" path="res://scripts/weapon/fps_weapon_controller.gd" id="3_controller"]
+[ext_resource type="Script" path="res://scripts/weapon/weapon_state_machine.gd" id="4_statemachine"]
+[ext_resource type="Script" path="res://scripts/weapon/states/idle_weapon_state.gd" id="5_idle"]
+[ext_resource type="Resource" uid="uid://cpistolresource" path="res://assets/weapons/pistol/pistol_resource.tres" id="6_resource"]
+
+[node name="PistolFPS" type="Node3D"]
+script = ExtResource("3_controller")
+weapon_resource = ExtResource("6_resource")
+
+[node name="WeaponModel" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Pistol" parent="WeaponModel" instance=ExtResource("1_pistol")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0.02, -0.05, 0.1)
+
+[node name="Arms" parent="WeaponModel" instance=ExtResource("2_arms")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, -0.2, 0.25)
+
+[node name="MuzzlePoint" type="Marker3D" parent="WeaponModel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.02, -0.15)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AudioPlayer" type="AudioStreamPlayer3D" parent="."]
+
+[node name="WeaponStateMachine" type="Node" parent="."]
+script = ExtResource("4_statemachine")
+
+[node name="Idle" type="Node" parent="WeaponStateMachine"]
+script = ExtResource("5_idle")

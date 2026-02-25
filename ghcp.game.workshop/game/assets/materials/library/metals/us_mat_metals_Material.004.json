@@ -1,0 +1,22 @@
+{
+  "name": "Material.004",
+  "category": "metals",
+  "properties": {
+    "base_color": [
+      0.800000011920929,
+      0.800000011920929,
+      0.800000011920929,
+      1.0
+    ],
+    "metallic": 0.7927272915840149,
+    "roughness": 0.0,
+    "subsurface_weight": 0.0,
+    "coat_weight": 0.0,
+    "normal_strength": 1.0
+  },
+  "embedded_textures": [
+    "front (3)",
+    "Untitled.012"
+  ],
+  "principled_bsdf": true
+}

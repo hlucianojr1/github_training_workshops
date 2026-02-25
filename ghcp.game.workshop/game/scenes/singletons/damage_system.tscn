@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://cdamagesystemsingleton"]
+
+[node name="DamageSystem" type="DamageSystem" groups=["damage_system"]]

@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c6m3k8qr2x1pl"]
+
+[ext_resource type="Shader" path="res://assets/shaders/street.gdshader" id="1_shader"]
+
+[resource]
+resource_name = "Wet Asphalt"
+shader = ExtResource("1_shader")
+shader_parameter/asphalt_color = Color(0.18, 0.31, 0.31, 1)
+shader_parameter/roughness = 0.8
+shader_parameter/uv_scale = 10.0
+shader_parameter/puddle_coverage = 0.5
+shader_parameter/wetness = 0.7

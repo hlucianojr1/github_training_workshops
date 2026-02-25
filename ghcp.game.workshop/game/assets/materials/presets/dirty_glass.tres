@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c7f3k9d2m8n1p"]
+
+[ext_resource type="Shader" path="res://assets/shaders/street.gdshader" id="1_shader"]
+
+[resource]
+resource_name = "Dirty Glass"
+shader = ExtResource("1_shader")
+shader_parameter/base_color = Color(0.75, 0.78, 0.80, 0.3)
+shader_parameter/roughness = 0.15
+shader_parameter/metallic = 0.0
+shader_parameter/grime_color = Color(0.25, 0.22, 0.18, 1)
+shader_parameter/grime_amount = 0.45
+shader_parameter/wetness = 0.3
+shader_parameter/uv_scale = 1.0

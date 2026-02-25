@@ -1,0 +1,21 @@
+{
+  "name": "Material.019",
+  "category": "metals",
+  "properties": {
+    "base_color": [
+      0.800000011920929,
+      0.800000011920929,
+      0.800000011920929,
+      1.0
+    ],
+    "metallic": 0.7381818294525146,
+    "roughness": 0.5945454835891724,
+    "subsurface_weight": 0.0,
+    "coat_weight": 0.0,
+    "normal_strength": 1.0
+  },
+  "embedded_textures": [
+    "Screenshot 2025-09-30 024956"
+  ],
+  "principled_bsdf": true
+}

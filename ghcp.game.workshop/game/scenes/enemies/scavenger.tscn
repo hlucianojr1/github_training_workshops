@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://cscavenger001"]
+
+[ext_resource type="PackedScene" path="res://assets/models/enemies/char_enemy_scavenger_lod0.gltf" id="1_model"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_001"]
+radius = 0.35
+height = 1.7
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_001"]
+radius = 15.0
+
+[node name="Scavenger" type="EnemyAI" groups=["enemy", "damageable"]]
+collision_layer = 2
+collision_mask = 1
+max_health = 60.0
+move_speed = 3.0
+chase_speed = 5.0
+attack_damage = 15.0
+attack_range = 1.5
+flee_health_threshold = 0.3
+cover_health_threshold = 0.6
+ai_accuracy = 0.4
+loot_table = ["bandage", "food_canned"]
+corpse_cleanup_time = 45.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
+shape = SubResource("CapsuleShape3D_001")
+
+[node name="ScavengerModel" parent="." instance=ExtResource("1_model")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.5
+target_desired_distance = 1.0
+path_max_distance = 3.0
+avoidance_enabled = true
+radius = 0.4
+neighbor_distance = 10.0
+
+[node name="AIPerception" type="AIPerception" parent="."]
+sight_range = 15.0
+sight_angle = 100.0
+peripheral_range = 5.0
+hearing_range = 10.0
+gunshot_hearing_range = 30.0
+
+[node name="SightArea" type="Area3D" parent="AIPerception"]
+collision_layer = 0
+collision_mask = 1
+
+[node name="SightShape" type="CollisionShape3D" parent="AIPerception/SightArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -7.5)
+shape = SubResource("SphereShape3D_001")

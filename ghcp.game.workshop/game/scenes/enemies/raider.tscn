@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://craider0001"]
+
+[ext_resource type="PackedScene" path="res://assets/models/enemies/char_enemy_police_officer_lod0.glb" id="1_model"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_001"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_001"]
+radius = 25.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_001"]
+height = 1.6
+radius = 0.3
+
+[node name="Raider" type="EnemyAI" groups=["enemy", "damageable"]]
+collision_layer = 2
+collision_mask = 1
+max_health = 100.0
+move_speed = 4.0
+chase_speed = 6.0
+attack_damage = 20.0
+attack_range = 15.0
+flee_health_threshold = 0.15
+cover_health_threshold = 0.5
+ai_accuracy = 0.7
+loot_table = ["ammo_45acp", "ammo_shotgun", "bandage"]
+corpse_cleanup_time = 60.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_001")
+
+[node name="RaiderModel" parent="." instance=ExtResource("1_model")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.5
+target_desired_distance = 1.5
+path_max_distance = 5.0
+avoidance_enabled = true
+radius = 0.45
+neighbor_distance = 15.0
+
+[node name="AIPerception" type="AIPerception" parent="."]
+sight_range = 25.0
+sight_angle = 120.0
+peripheral_range = 8.0
+hearing_range = 15.0
+gunshot_hearing_range = 50.0
+
+[node name="SightArea" type="Area3D" parent="AIPerception"]
+collision_layer = 0
+collision_mask = 1
+
+[node name="SightShape" type="CollisionShape3D" parent="AIPerception/SightArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -12.5)
+shape = SubResource("SphereShape3D_001")
+
+[node name="WeaponMount" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1.2, -0.2)

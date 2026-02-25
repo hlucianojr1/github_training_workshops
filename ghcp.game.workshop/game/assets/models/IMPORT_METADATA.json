@@ -1,0 +1,12 @@
+{
+  "import_batch": "phase_2b_godot_integration",
+  "timestamp": "2026-01-19",
+  "total_assets": 17,
+  "categories": {
+    "buildings": 8,
+    "vehicles": 1,
+    "props": 3,
+    "infrastructure": 5
+  },
+  "ready_for_import": true
+}

@@ -1,0 +1,281 @@
+[gd_scene load_steps=37 format=3 uid="uid://h27fwg0hocxo"]
+
+[ext_resource type="Script" uid="uid://dnsoc3xr2w8p1" path="res://scenes/levels/level_1.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://hudscene001" path="res://scenes/ui/hud.tscn" id="2_hud"]
+[ext_resource type="PackedScene" uid="uid://dmkh2w0xp3nsg" path="res://assets/models/environment/env_suspension_bridge_lod0.glb" id="3_cfnpk"]
+[ext_resource type="PackedScene" uid="uid://cvd8ss5ood8fi" path="res://assets/models/props/lamppost_vintage.glb" id="5_iav0o"]
+[ext_resource type="PackedScene" uid="uid://dsu0bol4lcl5t" path="res://assets/models/props/alarm_box.gltf" id="5_np2pn"]
+[ext_resource type="PackedScene" uid="uid://dj2cco1vrmm75" path="res://assets/models/fire_hydrant.gltf" id="6_v6ha0"]
+[ext_resource type="PackedScene" uid="uid://lxmu3m4gdqbj" path="res://assets/models/vehicles/vehicle_tank_m48_lod0.glb" id="9_tank"]
+[ext_resource type="PackedScene" uid="uid://bs6q5weow4a2g" path="res://assets/models/vehicles/vehicle_police_sedan_1960s.glb" id="11_police_car"]
+[ext_resource type="PackedScene" uid="uid://hb5rm0yfwtrv" path="res://assets/models/vehicles/cadillac_convertible_1960.glb" id="12_cadillac"]
+[ext_resource type="PackedScene" uid="uid://cgnomhiyuswa2" path="res://assets/models/props/prop_street_fire_hydrant_lod0.gltf" id="13_hydrant"]
+[ext_resource type="PackedScene" uid="uid://c4ee5f48im75d" path="res://assets/models/props/prop_street_mailbox_lod0.gltf" id="14_mailbox"]
+[ext_resource type="PackedScene" uid="uid://ck1tmv4hsafts" path="res://assets/models/props/prop_debris_pile_lod0.glb" id="15_debris"]
+[ext_resource type="PackedScene" uid="uid://dugm83jxx4ye3" path="res://assets/models/props/prop_wood_fence_lod0.glb" id="15_gmpev"]
+[ext_resource type="PackedScene" uid="uid://dis3lbci2b6ou" path="res://assets/models/props/prop_barrier_concrete_radiation_lod0.glb" id="16_mkypq"]
+[ext_resource type="PackedScene" uid="uid://c5p5ncnkoawxw" path="res://assets/models/vehicles/sedan_vintage_01.glb" id="16_sedan_vintage"]
+[ext_resource type="Material" uid="uid://cpk3f1gmxjh1y" path="res://assets/materials/asphalt.tres" id="17_asphalt"]
+[ext_resource type="PackedScene" uid="uid://bqhdk51v86kbn" path="res://assets/models/vehicles/vehicle_bus_transit_1960s_lod0.glb" id="17_mkypq"]
+[ext_resource type="PackedScene" uid="uid://xwdfddcaxt86" path="res://assets/models/vehicles/vehicle_taxi_checker_rooftop_lod0.glb" id="18_ndtll"]
+[ext_resource type="Material" uid="uid://bsidewalk001" path="res://assets/materials/sidewalk_material.tres" id="18_sidewalk"]
+[ext_resource type="PackedScene" uid="uid://byh4oi4huoh3s" path="res://assets/models/vehicles/vehicle_pickup_vintage.glb" id="19_7h2jl"]
+[ext_resource type="PackedScene" uid="uid://o5fwd8xgaqc1" path="res://assets/models/vehicles/limo_1960.gltf" id="20_mqh5v"]
+[ext_resource type="PackedScene" uid="uid://cuuepwtci4i7j" path="res://assets/models/props/trashcan.glb" id="22_ndtll"]
+[ext_resource type="PackedScene" uid="uid://danmm62f0y5r0" path="res://assets/models/characters/player/cac-1768663399594.gltf" id="23_mqh5v"]
+[ext_resource type="PackedScene" uid="uid://o4pk33j3n3s3" path="res://assets/models/characters/char_player_survivor_alt_lod0.glb" id="24_7o3do"]
+[ext_resource type="PackedScene" uid="uid://dtihfol0dfx48" path="res://assets/models/buildings/downtown_modernoffice_1_b.glb" id="24_vmrhw"]
+[ext_resource type="PackedScene" uid="uid://cuh6r173sxb0p" path="res://assets/models/buildings/downtown_modernoffice_2.glb" id="25_cfnpk"]
+[ext_resource type="PackedScene" uid="uid://dalw6105knbld" path="res://assets/models/buildings/downtown_modernoffice_3.glb" id="26_wvtie"]
+[ext_resource type="PackedScene" uid="uid://dj50cu2d644es" path="res://assets/models/buildings/downtown_modernoffice_4.glb" id="27_o8s4s"]
+[ext_resource type="PackedScene" uid="uid://bgrdev3l0j48v" path="res://assets/models/buildings/downtown_modernoffice_5.glb" id="28_ebb2h"]
+[ext_resource type="PackedScene" uid="uid://csibf65fwmlbd" path="res://assets/models/buildings/downtown_publicbuilding_1.glb" id="29_row31"]
+[ext_resource type="PackedScene" uid="uid://b6d88gh8s8ft6" path="res://assets/models/buildings/downtown_residential_2.glb" id="30_ytidy"]
+[ext_resource type="PackedScene" uid="uid://cjfuk1w1rxni" path="res://assets/models/buildings/downtown_residential_3.glb" id="31_hvllt"]
+[ext_resource type="PackedScene" uid="uid://4qml3c22m4rj" path="res://assets/models/buildings/downtown_residential_4.glb" id="32_dp4fg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sunset"]
+sky_top_color = Color(0.35, 0.4, 0.6, 1)
+sky_horizon_color = Color(0.7, 0.5, 0.4, 1)
+ground_bottom_color = Color(0.2, 0.2, 0.2, 1)
+ground_horizon_color = Color(0.7, 0.5, 0.4, 1)
+
+[sub_resource type="Sky" id="Sky_sunset"]
+sky_material = SubResource("ProceduralSkyMaterial_sunset")
+
+[sub_resource type="Environment" id="Environment_sunset"]
+background_mode = 2
+sky = SubResource("Sky_sunset")
+ambient_light_source = 3
+ambient_light_color = Color(0.5, 0.45, 0.4, 1)
+tonemap_mode = 2
+fog_enabled = true
+fog_light_color = Color(0.6, 0.55, 0.5, 1)
+fog_density = 0.002
+fog_sky_affect = 0.5
+
+[node name="Level1" type="Node3D"]
+script = ExtResource("1_script")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_sunset")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, -0.75, 0.433013, 0, 10, 0)
+light_color = Color(1, 0.9, 0.8, 1)
+light_energy = 1.2
+shadow_enabled = true
+
+[node name="HUD" parent="." instance=ExtResource("2_hud")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 8, 20)
+current = true
+fov = 70.0
+
+[node name="Geometry" type="Node3D" parent="."]
+
+[node name="VisualAnchors" type="Node3D" parent="Geometry"]
+
+[node name="GW_Bridge_Placeholder" type="CSGBox3D" parent="Geometry/VisualAnchors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 60, -300)
+visible = false
+size = Vector3(200, 20, 20)
+
+[node name="GW_Bridge_Tower_L" type="CSGBox3D" parent="Geometry/VisualAnchors/GW_Bridge_Placeholder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 40, 0)
+size = Vector3(30, 100, 30)
+
+[node name="GW_Bridge_Tower_R" type="CSGBox3D" parent="Geometry/VisualAnchors/GW_Bridge_Placeholder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 40, 0)
+size = Vector3(30, 100, 30)
+
+[node name="Loews_Theatre_Placeholder" type="CSGBox3D" parent="Geometry/VisualAnchors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 15, -80)
+size = Vector3(40, 30, 60)
+
+[node name="Apartment_Row_East" type="CSGBox3D" parent="Geometry/VisualAnchors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 20, 50)
+visible = false
+size = Vector3(40, 40, 300)
+
+[node name="Apartment_Row_West" type="CSGBox3D" parent="Geometry/VisualAnchors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 20, 50)
+visible = false
+size = Vector3(40, 40, 300)
+
+[node name="Sketchfab_Scene" parent="Geometry/VisualAnchors" instance=ExtResource("3_cfnpk")]
+transform = Transform3D(0.11218089, 0, 2.997902, 0, 3, 0, -2.997902, 0, 0.11218089, 51.530193, 27.508945, -161.08266)
+
+[node name="Road" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14201355, -0.6540108, -56.86559)
+size = Vector3(20, 1, 200)
+material = ExtResource("17_asphalt")
+
+[node name="SidewalkLeft" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.005071, -0.25521636, -50.00123)
+size = Vector3(4, 1.5, 200)
+material = ExtResource("18_sidewalk")
+
+[node name="SidewalkRight" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -0.25, -50)
+size = Vector3(4, 1.5, 200)
+material = ExtResource("18_sidewalk")
+
+[node name="alarm_box" parent="Geometry" instance=ExtResource("5_np2pn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.716988, 0.5853747, -12.585888)
+
+[node name="fire_hydrant" parent="Geometry" instance=ExtResource("6_v6ha0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.944577, 0.64867747, -6.296016)
+
+[node name="Props" type="Node3D" parent="."]
+
+[node name="Lamppost_Victorian_3" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -50)
+
+[node name="Lamppost_Victorian_4" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -70)
+
+[node name="PhoneBooth" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -20)
+
+[node name="TrashCan" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -15)
+
+[node name="TrashCan_2" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -40)
+
+[node name="TrashCan_3" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -80)
+
+[node name="FireAlarmBox" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.5, -25)
+
+[node name="FireHydrant_1" parent="Props" instance=ExtResource("13_hydrant")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -8)
+
+[node name="FireHydrant_2" parent="Props" instance=ExtResource("13_hydrant")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -55)
+
+[node name="FireHydrant_3" parent="Props" instance=ExtResource("13_hydrant")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -90)
+
+[node name="Mailbox_3" parent="Props" instance=ExtResource("14_mailbox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -75)
+
+[node name="lamppost_vintage2" parent="Props" instance=ExtResource("5_iav0o")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10.626922, 0.5194031, -2.3554974)
+
+[node name="lamppost_vintage" parent="Props" instance=ExtResource("5_iav0o")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10.701464, 0.51519203, -17.000065)
+
+[node name="lamppost_vintage3" parent="Props" instance=ExtResource("5_iav0o")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10.801416, 0.56970835, -30.602995)
+
+[node name="lamppost_vintage4" parent="Props" instance=ExtResource("5_iav0o")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10.972136, 0.5187205, 19.308548)
+
+[node name="lamppost_vintage5" parent="Props" instance=ExtResource("5_iav0o")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10.801416, 0.56970835, -40.48622)
+
+[node name="Zone1_TrafficJam" type="Node3D" parent="."]
+
+[node name="Police_Car_1" parent="Zone1_TrafficJam" instance=ExtResource("11_police_car")]
+transform = Transform3D(1.3594619, 0, -0.633927, 0, 1.5, 0, 0.633927, 0, 1.3594619, -3, 0, -35)
+
+[node name="Cadillac_1" parent="Zone1_TrafficJam" instance=ExtResource("12_cadillac")]
+transform = Transform3D(1.4095391, 0, 0.5130298, 0, 1.5, 0, -0.5130298, 0, 1.4095391, 4, 0, -18)
+
+[node name="Sedan_Vintage_1" parent="Zone1_TrafficJam" instance=ExtResource("16_sedan_vintage")]
+transform = Transform3D(3.464101, 0, 2.000001, 0, 4, 0, -2.000001, 0, 3.464101, 3.4658022, 0, -42)
+
+[node name="prop_wood_fence_lod02" parent="Zone1_TrafficJam" instance=ExtResource("15_gmpev")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 10.409891, 0.64159894, -58.916733)
+
+[node name="prop_barrier_concrete_radiation_lod0" parent="Zone1_TrafficJam" instance=ExtResource("16_mkypq")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 4.78234, 0.017760992, -58.906906)
+
+[node name="Zone2_Checkpoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -60)
+
+[node name="Tank_M48" parent="Zone2_Checkpoint" instance=ExtResource("9_tank")]
+
+[node name="Sandbag_Wall_R" type="CSGBox3D" parent="Zone2_Checkpoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.75, 0)
+visible = false
+size = Vector3(8, 1.5, 2)
+
+[node name="Debris_Pile_1" parent="Zone2_Checkpoint" instance=ExtResource("15_debris")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -3)
+
+[node name="Debris_Pile_2" parent="Zone2_Checkpoint" instance=ExtResource("15_debris")]
+transform = Transform3D(3.9600906, 0.0018305429, -4.5075145, 0.02354241, 5.9999094, 0.023119874, 4.507454, -0.032945752, 3.9600246, 9.767118, 0.5, 5.647503)
+
+[node name="sedan_vintage_01" parent="." instance=ExtResource("16_sedan_vintage")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -8.196215, 0, -12.600365)
+
+[node name="prop_barrier_concrete_radiation_lod0" parent="." instance=ExtResource("16_mkypq")]
+transform = Transform3D(2.5828922, 0, -1.5259974, 0, 3, 0, 1.5259974, 0, 2.5828922, 4.4000506, -0.040643573, -52.459743)
+
+[node name="prop_barrier_concrete_radiation_lod1" parent="." instance=ExtResource("16_mkypq")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -5.2484016, 0, -59.75021)
+
+[node name="prop_barrier_concrete_radiation_lod2" parent="." instance=ExtResource("16_mkypq")]
+transform = Transform3D(1.9250718, 0, 2.300891, 0, 3, 0, -2.300891, 0, 1.9250718, -4.108631, 0, -52.39718)
+
+[node name="prop_wood_fence_lod02" parent="." instance=ExtResource("15_gmpev")]
+transform = Transform3D(2.8901205, 0, -0.8044898, 0, 3, 0, 0.8044898, 0, 2.8901205, -10.943124, 0.5770745, -61.36373)
+
+[node name="vehicle_bus_transit_1960s_lod0" parent="." instance=ExtResource("17_mkypq")]
+transform = Transform3D(0.77987796, 0, 0.44921076, 0, 0.9, 0, -0.44921076, 0, 0.77987796, 4.6531734, 0, -28.666069)
+
+[node name="vehicle_taxi_checker_rooftop_lod0" parent="." instance=ExtResource("18_ndtll")]
+transform = Transform3D(1.4645233, 0, 0.32430157, 0, 1.5, 0, -0.32430157, 0, 1.4645233, 4.5191135, -0.038250446, -8.087384)
+
+[node name="vehicle_pickup_vintage" parent="." instance=ExtResource("19_7h2jl")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -7.9744563, 0, -23.86059)
+
+[node name="limo_1960" parent="." instance=ExtResource("20_mqh5v")]
+transform = Transform3D(5.7168913, 0, -1.821305, 0, 6, 0, 1.821305, 0, 5.7168913, -7.2296314, -0.011619568, -3.2006207)
+
+[node name="cadillac_convertible_19602" parent="." instance=ExtResource("12_cadillac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8263874, 0, -0.73232603)
+
+[node name="lamppost_vintage" parent="." instance=ExtResource("5_iav0o")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 11.418231, 0.5373299, -20.745764)
+
+[node name="trashcan" parent="." instance=ExtResource("22_ndtll")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.808797, 0.53674793, -13.392871)
+
+[node name="AuxScene" parent="." instance=ExtResource("23_mqh5v")]
+transform = Transform3D(-0.009994011, 0, 0.00034603037, 0, 0.01, 0, -0.00034603037, 0, -0.009994011, -0.372792, 0.8291613, 27.978706)
+
+[node name="char_player_survivor_alt_lod02" parent="." instance=ExtResource("24_7o3do")]
+transform = Transform3D(-0.98733366, 0, -0.15865771, 0, 1, 0, 0.15865771, 0, -0.98733366, -5.2967324, 0, 25.559443)
+
+[node name="downtown_modernoffice_1_b" parent="." instance=ExtResource("24_vmrhw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.418192, 0, 40.1328)
+
+[node name="downtown_modernoffice_2" parent="." instance=ExtResource("25_cfnpk")]
+transform = Transform3D(0.11554396, 0, 0.99330235, 0, 1, 0, -0.99330235, 0, 0.11554396, -25.558178, 0, 23.565447)
+
+[node name="downtown_modernoffice_3" parent="." instance=ExtResource("26_wvtie")]
+transform = Transform3D(-0.996683, 0, 0.08138186, 0, 1, 0, -0.08138186, 0, -0.996683, 20.382769, 0, 39.89377)
+
+[node name="downtown_modernoffice_4" parent="." instance=ExtResource("27_o8s4s")]
+transform = Transform3D(-0.99996454, 0, -0.008429781, 0, 1, 0, 0.008429781, 0, -0.99996454, 33.845505, 0, 7.702347)
+
+[node name="downtown_modernoffice_5" parent="." instance=ExtResource("28_ebb2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.434402, 0, 1.8659544)
+
+[node name="downtown_publicbuilding_1" parent="." instance=ExtResource("29_row31")]
+transform = Transform3D(-0.68396163, 0, -0.72951806, 0, 1, 0, 0.72951806, 0, -0.68396163, -28.880877, 4.7683716e-07, -40.453003)
+
+[node name="downtown_residential_2" parent="." instance=ExtResource("30_ytidy")]
+transform = Transform3D(0.034184307, 0, -0.9994155, 0, 1, 0, 0.9994155, 0, 0.034184307, 27.75911, -0.15711117, -26.517845)
+
+[node name="downtown_residential_3" parent="." instance=ExtResource("31_hvllt")]
+transform = Transform3D(-0.9929469, 0, -0.11856003, 0, 1, 0, 0.11856003, 0, -0.9929469, 29.993645, 0.1023922, -61.405144)
+
+[node name="downtown_residential_4" parent="." instance=ExtResource("32_dp4fg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.057627, 0.3458128, -80.82163)
