@@ -1,0 +1,24 @@
+# Welcome New Contributors Workflow
+# TODO: Complete this workflow using GitHub Copilot
+# 
+# Prompt to use in Copilot Chat:
+# "Write a complete GitHub Actions workflow that:
+# 1. Triggers when a pull request is opened
+# 2. Checks if this is the contributor's first pull request to this repository
+# 3. If it is their first PR, posts a welcome comment on the PR saying:
+#    'Welcome to the project! Thanks for your first contribution.
+#     A maintainer will review your PR within 2 business days.
+#     Please check our contributing guide if you have questions.'
+# 4. Only runs the comment step for first-time contributors
+# Use the GITHUB_TOKEN for authentication."
+
+name: Welcome New Contributors
+
+on:
+  # TODO: Add the correct trigger using Copilot
+  # Hint prompt: "What is the GitHub Actions YAML trigger for when a pull request is opened?"
+
+jobs:
+  # TODO: Add the welcome job using Copilot
+  # Hint prompt: "Write a GitHub Actions job that uses the peter-evans/first-interaction action
+  # to detect first-time contributors and post a welcome comment on their PR."

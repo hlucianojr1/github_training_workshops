@@ -1,0 +1,18 @@
+{
+  "color": {
+    "primary": {
+      "50":  { "value": "#EFF6FF", "type": "color" },
+      "100": { "value": "#DBEAFE", "type": "color" },
+      "500": { "value": "#3B82F6", "type": "color" },
+      "900": { "value": "#1E3A8A", "type": "color" }
+    },
+    "semantic": {
+      "success": { "value": "TODO", "type": "color" },
+      "warning": { "value": "TODO", "type": "color" },
+      "error":   { "value": "TODO", "type": "color" },
+      "info":    { "value": "TODO", "type": "color" }
+    }
+  },
+  "spacing": "TODO — use Copilot to generate spacing tokens based on color-palette.md",
+  "typography": "TODO — use Copilot to generate typography tokens based on color-palette.md"
+}
